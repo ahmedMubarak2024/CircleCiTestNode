@@ -12,6 +12,7 @@ jobs:
       - node/install
       - checkout
       # install dependencies in both apps
+      - run : npm install -g yarn
       - run:
           name: install 
           command: npm run install 
