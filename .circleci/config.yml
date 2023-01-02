@@ -23,6 +23,8 @@ jobs:
       - aws-cli/setup:
           profile-name: default  
       - run:
+          command: aws configure set region us-east-1
+      - run:
           name : Deploy
           command: npm run deploy-ui    
      
