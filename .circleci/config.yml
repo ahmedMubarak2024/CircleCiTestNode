@@ -22,5 +22,5 @@ jobs:
           command: npm run build 
       - run:
           name : Deploy
-          command: npm run deploy    
+          command: npm run deploy-ui    
      
