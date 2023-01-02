@@ -11,8 +11,6 @@ jobs:
     steps:
       - node/install
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
       # install dependencies in both apps
       - run:
           name: install 
