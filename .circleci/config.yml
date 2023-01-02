@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
   node: circleci/node@4.1.0
-  aws-s3: circleci/aws-s3@3.1.1
+  aws-cli: circleci/aws-cli@3.1
   # different jobs are calles later in the workflows sections
 jobs:
   build:
@@ -20,9 +20,8 @@ jobs:
       - run:
           name: Build 
           command: npm run build 
-      - run: # Install the AWS CLI if it is not already included in the docker image
-            name: Install awscli
-            command: sudo pip install awscli    
+      - aws-cli/setup:
+          profile-name: default  
       - run:
           name : Deploy
           command: npm run deploy-ui    
