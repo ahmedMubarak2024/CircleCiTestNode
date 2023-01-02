@@ -13,11 +13,14 @@ jobs:
       - checkout
       # install dependencies in both apps
       - run:
-          name: install
+          name: install UI project
           command: npm --prefix .\reactnd-contacts-complete\ i && npm --prefix .\reactnd-contacts-server\ i
       - run:
-          name: Build
-          command: npm --prefix .\reactnd-contacts-complete\ run build && npm --prefix .\reactnd-contacts-server\ run build
+          name: install Server Project
+          command: npm --prefix .\reactnd-contacts-server\ i    
       - run:
-          name: install
-          command: npm i
+          name: Build UI project
+          command: npm --prefix .\reactnd-contacts-complete\ run build 
+      - run:
+          name: Build Server Project
+          command: npm --prefix .\reactnd-contacts-server\ run build 
