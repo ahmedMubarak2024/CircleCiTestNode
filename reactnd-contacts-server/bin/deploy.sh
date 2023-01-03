@@ -1,1 +1,1 @@
-eb deploy
+eb deploy node-express-env
